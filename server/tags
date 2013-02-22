@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Application	.\server.py	/^class Application(tornado.web.Application):$/;"	c	inherits:tornado.web.Application
+LocationHandler	.\server.py	/^class LocationHandler(tornado.web.RequestHandler):$/;"	c	inherits:tornado.web.RequestHandler
+MainHandler	.\server.py	/^class MainHandler(tornado.web.RequestHandler):$/;"	c	inherits:tornado.web.RequestHandler
+VoteTemperatureHandler	.\server.py	/^class VoteTemperatureHandler(tornado.web.RequestHandler):$/;"	c	inherits:tornado.web.RequestHandler
+__init__	.\server.py	/^	def __init__(self):$/;"	m	class:Application	access:public
+app	.\server.py	/^	app = Application()$/;"	v	class:Application
+data	.\server.py	/^	data = db.query("SELECT * FROM `supercontrol`.`room`");$/;"	v	class:Application
+database	.\server.py	/^from tornado import database$/;"	i
+db	.\server.py	/^	db = database.Connection("localhost:3306", "supercontrol", user = "controler", password = "hello world");$/;"	v	class:Application
+define	.\server.py	/^from tornado.options import define, options$/;"	i
+get	.\server.py	/^	def get(self):$/;"	m	class:MainHandler	access:public
+ioloop	.\server.py	/^import tornado.ioloop$/;"	i
+logging	.\server.py	/^import logging$/;"	i
+options	.\server.py	/^from tornado.options import define, options$/;"	i
+post	.\server.py	/^	def post(self):$/;"	m	class:LocationHandler	access:public
+post	.\server.py	/^	def post(self):$/;"	m	class:VoteTemperatureHandler	access:public
+tornado	.\server.py	/^import tornado.ioloop$/;"	i
+tornado	.\server.py	/^import tornado.web$/;"	i
+web	.\server.py	/^import tornado.web$/;"	i

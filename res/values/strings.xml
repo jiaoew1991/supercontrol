@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RemoteControler</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="util_centigrade">&#176;C</string>
+    <string name="connect_internet_error">当前网络状况不佳</string>
+    <string name="main_chart_title">温度变化曲线</string>
+    <string name="main_chart_x_title">时间</string>
+    <string name="main_chart_y_title">温度</string>
+    <string name="main_activity_label">选择温度</string><string name="waiting_for_location">正在等待定位</string>
+    <string name="search_position">搜索位置</string>
+    
+    <string name="choose_room_activity_label">选择房间</string>
+    <string name="util_vote">投票</string>
+    <string name="main_choose_temperature">选择希望的温度</string>
+
+</resources>
