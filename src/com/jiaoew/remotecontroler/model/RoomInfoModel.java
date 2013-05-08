@@ -11,34 +11,28 @@ public class RoomInfoModel implements  Serializable{
 	public static final String ID = "id";
 	public static final String LATITUDE = "latitude";
 	public static final String LONGTITUDE = "longitude";
-	public static String CURRENT_TEMPERATURE = "curTemp";
-	public static String TARGET_TEMPERATURE = "targetTemp";
-	public static String DELAY_MINUTE = "delayMinute";
 	public static final String NAME = "name";
+	public static final String TEMPERATURE = "temperature";
+	public static final String OLD_TEMP = "old_temp";
+	public static final String VOTE_NUM = "vote_num";
 	private long id;
 	private double latitude;
 	private double longitude;
-	private double curTemp;
-	private double targetTemp;
-	private int delayMinute;
 	private String name;
-	public double getCurTemp() {
-		return curTemp;
+	private double temperature;
+	private double oldTemperature;
+	private int voteNumber;
+	public double getTemperature() {
+		return temperature;
 	}
-	public void setCurTemp(double curTemp) {
-		this.curTemp = curTemp;
+	public void setTemperature(double temperature) {
+		this.temperature = temperature;
 	}
-	public double getTargetTemp() {
-		return targetTemp;
+	public int getVoteNumber() {
+		return voteNumber;
 	}
-	public void setTargetTemp(double targetTemp) {
-		this.targetTemp = targetTemp;
-	}
-	public int getDelayMinute() {
-		return delayMinute;
-	}
-	public void setDelayMinute(int delayMinute) {
-		this.delayMinute = delayMinute;
+	public void setVoteNumber(int voteNumber) {
+		this.voteNumber = voteNumber;
 	}
 	public long getId() {
 		return id;
@@ -63,5 +57,11 @@ public class RoomInfoModel implements  Serializable{
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public double getOldTemperature() {
+		return oldTemperature;
+	}
+	public void setOldTemperature(double oldTemperature) {
+		this.oldTemperature = oldTemperature;
 	}
 }

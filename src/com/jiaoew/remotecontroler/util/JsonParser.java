@@ -16,6 +16,7 @@ import android.telephony.TelephonyManager;
 import com.jiaoew.remotecontroler.MainActivity;
 import com.jiaoew.remotecontroler.RemoteApp;
 import com.jiaoew.remotecontroler.model.RoomInfoModel;
+import com.jiaoew.remotecontroler.model.TemperatureRecordModel;
 
 public class JsonParser {
 
@@ -23,13 +24,9 @@ public class JsonParser {
 	public JsonParser(Context context) {
 		mContext = context;
 	}
-	public List<RoomInfoModel> getRoomInfo(String url, Location location) throws JSONException {
-		HttpRequestHelper request = new HttpRequestHelper();
-		request.setRequestUri(url);
-		String serverRst = request.postJsonResult(makePostRoomData(location));
-		
+	public List<RoomInfoModel> getRoomInfo(String str) throws JSONException {
 		List<RoomInfoModel> list = new ArrayList<RoomInfoModel>();
-		JSONArray json = new JSONArray(serverRst);
+		JSONArray json = new JSONArray(str);
 		for (int i = 0; i < json.length(); i++) {
 			JSONObject jo = json.getJSONObject(i);
 			RoomInfoModel model = new RoomInfoModel();
@@ -37,39 +34,24 @@ public class JsonParser {
 			model.setName(jo.getString(RoomInfoModel.NAME));
 			model.setLatitude(jo.getDouble(RoomInfoModel.LATITUDE));
 			model.setLongitude(jo.getDouble(RoomInfoModel.LONGTITUDE));
-			model.setCurTemp(jo.getDouble(RoomInfoModel.CURRENT_TEMPERATURE));
-			model.setTargetTemp(jo.getDouble(RoomInfoModel.TARGET_TEMPERATURE));
-			model.setDelayMinute(jo.getInt(RoomInfoModel.DELAY_MINUTE));
+			model.setTemperature(jo.getDouble(RoomInfoModel.TEMPERATURE));
+			model.setVoteNumber(jo.getInt(RoomInfoModel.VOTE_NUM));
+			if (jo.has(RoomInfoModel.OLD_TEMP))
+				model.setOldTemperature(jo.getDouble(RoomInfoModel.OLD_TEMP));
 			list.add(model);
 		}
 		return list;
 	}
-	private List<NameValuePair> makePostRoomData(Location location) {
-		List<NameValuePair> data = new ArrayList<NameValuePair>();
-		data.add(new BasicNameValuePair("latitude", location.getLatitude() + ""));
-		data.add(new BasicNameValuePair("longitude", location.getLongitude() + ""));
-		return data;
+	public List<TemperatureRecordModel> getRecordInfo(String str) throws JSONException {
+		List<TemperatureRecordModel> list = new ArrayList<TemperatureRecordModel>();
+		JSONArray json = new JSONArray(str);
+		for (int i = 0; i < json.length(); i++) {
+			JSONObject jo = json.getJSONObject(i);
+			TemperatureRecordModel model = new TemperatureRecordModel();
+			model.setDate(jo.getString(TemperatureRecordModel.RECORD_TIME));
+			model.setTemperature(jo.getDouble(TemperatureRecordModel.TEMPERATURE));
+			list.add(model);
+		}
+		return list;
 	}
-//	public TemperatureModel getTeperature(String url) throws JSONException {
-//		TemperatureModel model = new TemperatureModel();
-//		HttpRequestHelper request = new HttpRequestHelper();
-//		request.setRequestUri(url);
-//		String serverResult = request.postJsonResult(makePostData());
-//		JSONObject json = new JSONObject(serverResult);
-//		model.setCurTemp(json.getDouble(TemperatureModel.CURRENT_TEMPERATURE));
-//		model.setTargetTemp(json.getDouble(TemperatureModel.TARGET_TEMPERATURE));
-//		model.setDelayMinute(json.getInt(TemperatureModel.DELAY_MINUTE));
-//		return model;
-//	}
-//	private List<NameValuePair> makePostData() {
-//		List<NameValuePair> data = new ArrayList<NameValuePair>();
-//		TelephonyManager tm = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
-//		NameValuePair phoneId = new BasicNameValuePair(RemoteApp.PHONE_ID, tm.getDeviceId());
-////		NameValuePair deviceId = new BasicNameValuePair(RemoteApp.DEVEICE_ID, ((MainActivity) mContext).getRemoteDeviceId() + "");
-////		NameValuePair targetTemp = new BasicNameValuePair("targetTemp", 23 + "");
-//		data.add(phoneId);
-////		data.add(deviceId);
-////		data.add(targetTemp);
-//		return data;
-//	}
 }

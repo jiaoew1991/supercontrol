@@ -2,18 +2,29 @@
 <resources>
 
     <string name="app_name">RemoteControler</string>
-    <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    <string name="connect_internet_error">当前网络状况不佳,请稍候再试</string>
+    <string name="search_position">搜索位置</string>
     <string name="util_centigrade">&#176;C</string>
-    <string name="connect_internet_error">当前网络状况不佳</string>
+    <string name="util_vote">投票</string>
     <string name="main_chart_title">温度变化曲线</string>
     <string name="main_chart_x_title">时间</string>
     <string name="main_chart_y_title">温度</string>
-    <string name="main_activity_label">选择温度</string><string name="waiting_for_location">正在等待定位</string>
-    <string name="search_position">搜索位置</string>
-    
-    <string name="choose_room_activity_label">选择房间</string>
-    <string name="util_vote">投票</string>
+    <string name="main_last_temp_change">温度变化曲线</string>
+    <string name="main_activity_label">选择温度</string>
+    <string name="waiting_for_location">正在等待定位</string>
     <string name="main_choose_temperature">选择希望的温度</string>
+    <string name="main_vote_success">您已成功提交</string>
+    <string name="main_vote_too_short">抱歉您以投过票，请%1$s分钟后再投</string>
+    <string name="main_vote_failed">抱歉由于网络原因投票失败</string>
+    <string name="main_temp_record_failed">当前网络状况不佳，获取温度记录失败</string>
+    <string name="choose_room_activity_label">选择房间</string>
+    <string name="choose_room_distance">相距%1$s千米</string>
+    <string name="choose_room_distance_near">相距不到1千米</string>
+    <string name="choose_room_tab1_label">选择房间</string>
+    <string name="choose_room_tab2_label">所有房间</string>
+    <string name="title_activity_text">TextActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

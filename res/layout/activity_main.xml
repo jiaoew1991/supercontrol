@@ -4,18 +4,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-    <RelativeLayout 
-        android:id="@+id/main_text_container"
-        android:layout_height="50dip"
-        android:layout_width="fill_parent" >
-	    <TextView 
-	        android:id="@+id/main_current_temperature_text"
-	        android:layout_width="fill_parent"
-	        android:layout_height="fill_parent"
-	        android:gravity="center"
-	        android:textAppearance="?android:attr/textAppearanceLarge"
-	        android:text="abc"/>
-    </RelativeLayout>
     <LinearLayout
         android:id="@+id/main_chart_container"
         android:layout_width="fill_parent"
@@ -26,7 +14,7 @@
     </LinearLayout>
     <RelativeLayout 
         android:id="@+id/main_vote_container"
-        android:layout_below="@id/main_text_container"
+        android:layout_alignParentTop="true"
         android:layout_above="@id/main_chart_container"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
@@ -48,7 +36,12 @@
 	        android:layout_alignBottom="@+id/main_vote_submit"
 	        android:gravity="center"
 	        android:text="@string/main_choose_temperature" />
-
+		<NumberPicker 
+		    android:id="@+id/main_vote_number_picker"
+		    android:layout_height="fill_parent"
+		    android:layout_width="wrap_content"
+		    android:layout_below="@id/main_vote_text"
+		    android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
 </RelativeLayout>

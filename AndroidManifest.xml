@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.jiaoew.remotecontroler"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="16" />
+        android:minSdkVersion="15"
+        android:targetSdkVersion="15" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name="com.jiaoew.remotecontroler.RemoteApp"
@@ -31,6 +32,10 @@
         <activity
             android:name="com.jiaoew.remotecontroler.MainActivity"
             android:label="@string/main_activity_label" >
+        </activity>
+        <activity
+            android:name="com.jiaoew.remotecontroler.TextActivity"
+            android:label="@string/title_activity_text" >
         </activity>
     </application>
 
